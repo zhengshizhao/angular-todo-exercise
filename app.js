@@ -15,15 +15,14 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use('/bootstrap', express.static(__dirname + '/node_modules/bootstrap/dist'));
 app.use('/angular', express.static(__dirname + '/node_modules/angular'));
 
-// serve any other static files
+// serve the files for the Angular app
 app.use(express.static(__dirname + '/browser'));
-
 app.get('/*', function(req, res) {
   res.sendFile('/templates/index.html');
 });
 
 // serve dynamic routes
-app.use(require('./routes'));
+app.use(require('./server/routes'));
 
 // failed to catch req above means 404, forward to error handler
 app.use(function(req, res, next) {

@@ -1,17 +1,16 @@
-var forwardButton = '<button class="btn btn-default forward">\>\></button>'
-var backwardButton = '<button class="btn btn-default backward">\<\<</button>'
-var xButton = '<button class="btn btn-danger x">X</button>'
-
-var all_activities = {};
-
-
 // For educational purposes, we have put the entire angular app in one file.  Don't try this at home.  It is not safe.
-
-var app = angular.module('Todo', 'ui.router')
+var app = angular.module('Todo', 'ui.router');
 
 app.directive('Header', function() {
   return {
+  	restrict: 'E',
     templateUrl: '/temlpates/header.html'
+  }
+})
+
+app.directive('ListItem', function() {
+  return {
+    templateUrl: '/temlpates/listItem.html'
   }
 })
 
