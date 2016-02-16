@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+  <title>My Cool To-Do List - {% block title %}{% endblock %}</title>
+  <head>
+    <link href="/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/stylesheets/style.css" rel="stylesheet">
+    <script src="/jquery/jquery.js"></script>
+    <script src="/js/script.js"></script>
+
+  </head>
+  <body>
+    <h1 href="/">
+      <span class="glyphicon glyphicon-pencil"></span>
+      <span>   My Cool To-Do List</span>
+    </h1>
+
+    <div class="row activities">
+      <select name="select" id="activity-selector">
+      </select>
+      <button class="btn btn-primary" id="addActivity">+</button>
+    </div>
+
+    <div class="row">
+      <div class='col-lg-6'>
+        <h2> To Do </h2>
+
+        <div class="lists">
+          <ul id="todo-list">
+          <!-- Your Todo List Here -->
+          </ul>
+        </div>
+
+      </div>
+
+      <div class='col-lg-6'>
+        <h2> Complete </h2>
+
+        <div class="lists">
+          <ul id="complete-list">
+            <!-- Your Completed Tasks Here -->
+          </ul>
+        </div>
+
+      </div>
+
+
+
+    </div>
+
+
+
+  </body>
+</html>
