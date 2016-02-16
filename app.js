@@ -15,9 +15,9 @@ app.use('/bootstrap', express.static(__dirname + '/node_modules/bootstrap/dist')
 app.use('/angular', express.static(__dirname + '/node_modules/angular'));
 
 // serve the files for the Angular app
-app.use(express.static(__dirname + '/browser'));
+app.use('/browser', express.static(__dirname + '/browser'));
 app.get('/*', function(req, res) {
-  res.sendFile('/templates/index.html');
+  res.sendFile(__dirname + '/browser/templates/index.html');
 });
 
 // serve dynamic routes
