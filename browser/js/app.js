@@ -5,7 +5,7 @@ var app = angular.module('app', []);
 
 app.controller('MainCtrl', function($scope) {
   $scope.items = [];
-  
+
   //Creates an item object and adds it to the items array
   $scope.addItem = function(todoInput) {
     var listItem = {
@@ -14,16 +14,15 @@ app.controller('MainCtrl', function($scope) {
     }
 
     $scope.items.push(listItem)
+    $scope.todoInput = ""
   }
-  
+
   //Finds a given item in the items array and removes it
   $scope.remove = function(item) {
-    if($scope.items.indexOf(item) > -1) {
-      var index = $scope.items.indexOf(item)
-      $scope.items.splice(index, 1)
-    }
+    //This helper method is defined at the bottom of this file
+    utilsModule.remove($scope.items, item)
   }
-  
+
 })
 
 app.directive('listItem', function() {
@@ -39,12 +38,22 @@ app.directive('listItem', function() {
       scope.markComplete = function() {
         scope.item.complete = true;
       }
-      
+
       scope.markIncomplete = function() {
         scope.item.complete = false;
       }
-      
+
     }
   }
 })
+
+//This module contains some helpful methods
+var utilsModule = {
+  remove: function (array, item) {
+    var index = array.indexOf(item);
+    if (index === -1) return;
+    return array.splice(index, 1);
+  }
+
+};
 

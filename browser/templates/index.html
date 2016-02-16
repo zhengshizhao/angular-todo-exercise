@@ -14,7 +14,6 @@
         <span class="glyphicon glyphicon-pencil"></span>
         <span>   My Cool To-Do List</span>
       </h1>
-      <main-header></main-header>
       <div class="row activities">
         <form name="formInput" ng-submit="addItem(todoInput)">
           <input ng-model="todoInput" type="text">
@@ -25,35 +24,19 @@
       <div class="row">
         <div class='col-xs-6'>
           <h2> To Do </h2>
-          <div class="lists">
-            <ul id="todo-list">
-              <list-item ng-repeat="item in items | filter: {complete:false}" item="item"></list-item>
-            <!-- Your Todo List Here -->
-            </ul>
-          </div>
-
+          <ul class="lists" id="todo-list">
+            <list-item ng-repeat="item in items | filter: {complete:false}" item="item" remove="remove"></list-item>
+          <!-- Your Todo List Here -->
+          </ul>
         </div>
 
         <div class='col-xs-6'>
           <h2> Complete </h2>
-
-          <div class="lists">
-            <ul id="complete-list">
-              <list-item ng-repeat="item in items | filter: {complete:true}" item="item"></list-item>
-            </ul>
-          </div>
-
+          <ul class="lists" id="complete-list">
+            <list-item ng-repeat="item in items | filter: {complete:true}" item="item"></list-item>
+          </ul>
         </div>
-
-
-
       </div>
-
-
     </div>
-
-
-
-
   </body>
 </html>
