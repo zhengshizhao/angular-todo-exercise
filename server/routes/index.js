@@ -6,7 +6,7 @@ var ListItem = models.ListItem;
 var Promise = require('bluebird');
 
 
-router.get('/api/activities', function (req, res, next) {
+router.get('/activities', function (req, res, next) {
   Activity.find({}).exec()
   .then(function (allActivities) {
     res.json(allActivities);
@@ -14,21 +14,21 @@ router.get('/api/activities', function (req, res, next) {
   .then(null, next);
 });
 
-router.get('/api/listItems', function (req, res, next) {
+router.get('/listItems', function (req, res, next) {
   ListItem.find({}).populate('activity')
   .then(function (allListItems) {
     res.json(allListItems);
   }).then(null, next);
 });
 
-router.post('/api/listItems', function (req, res, next) {
+router.post('/listItems', function (req, res, next) {
   ListItem.create(req.body)
   .then(function (newItem) {
     res.json(newItem);
   }).then(null, next);
 });
 
-router.put('/api/listItems/:itemId', function (req, res, next) {
+router.put('/listItems/:itemId', function (req, res, next) {
   ListItem.findById(req.params.itemId)
   .then(function (foundItem) {
     foundItem.status = req.body.status;
@@ -38,7 +38,7 @@ router.put('/api/listItems/:itemId', function (req, res, next) {
   }).then(null, next);
 });
 
-router.delete('/api/listItems/:itemId', function (req, res, next) {
+router.delete('/listItems/:itemId', function (req, res, next) {
   console.log(req.params.itemId);
   ListItem.findByIdAndRemove(req.params.itemId)
   .then(function () {

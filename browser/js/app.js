@@ -1,6 +1,6 @@
 'use strict'
 
-// For educational purposes, we have put the entire angular app in one file.  Don't try this at home.  It is not safe.
+// For educational purposes, we have put the entire angular app in one file.  Don't try this at home kids.
 var app = angular.module('app', []);
 
 app.directive('mainHeader', function() {
@@ -13,15 +13,26 @@ app.directive('mainHeader', function() {
 app.directive('listItem', function() {
   return {
     templateUrl: '/templates/listItem.html',
-    controller: 'MainCtrl',
     scope: {
-      content:'=content'
+      item:'='
+    },
+    link: function(scope, element, attributes) {
+
     }
   }
 })
 
 app.controller('MainCtrl', function($scope) {
-	
+  $scope.items = [];
+
+  $scope.addItem = function(todoInput) {
+    var listItem = {
+      content: todoInput,
+      complete: false
+    }
+
+    $scope.items.push(listItem)
+  }
 })
 
 
