@@ -1,5 +1,5 @@
 // For educational purposes, we have put the entire angular app in one file.  Don't try this at home.  It is not safe.
-var app = angular.module('Todo', 'ui.router');
+var app = angular.module('todo', ['ui.router']);
 
 app.directive('Header', function() {
   return {
