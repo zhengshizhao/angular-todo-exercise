@@ -7,43 +7,19 @@ app.controller('MainCtrl', function($scope) {
   $scope.items = [];
 
   //Creates an item object and adds it to the items array
-  $scope.addItem = function(todoInput) {
+  $scope.addItem = function() {
     var listItem = {
-      content: todoInput,
-      complete: false
+      //item data here
     }
 
     $scope.items.push(listItem)
-    $scope.todoInput = ""
-  }
-
-  //Finds a given item in the items array and removes it
-  $scope.remove = function(item) {
-    //This helper method is defined at the bottom of this file
-    utilsModule.remove($scope.items, item)
   }
 
 })
 
 app.directive('listItem', function() {
   return {
-    templateUrl: '/templates/listItem.html',
-    scope: {
-      //the fields 'item' and 'remove' that are on the parent scope will be available in this directive
-      item:'=',
-      remove:'='
-    },
-    // This function let's us control the directive.  We could have made a controller for this directive instead.
-    link: function(scope, element, attrs) {
-      scope.markComplete = function() {
-        scope.item.complete = true;
-      }
 
-      scope.markIncomplete = function() {
-        scope.item.complete = false;
-      }
-
-    }
   }
 })
 

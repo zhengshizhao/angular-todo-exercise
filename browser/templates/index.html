@@ -8,34 +8,26 @@
 
   </head>
   <body ng-app="app">
-    <div ng-controller="MainCtrl">
+    <h1 href="/">
+      <span class="glyphicon glyphicon-pencil"></span>
+      <span>   My Cool To-Do List</span>
+    </h1>
+    <div class="row activities">
+    </div>
 
-      <h1 href="/">
-        <span class="glyphicon glyphicon-pencil"></span>
-        <span>   My Cool To-Do List</span>
-      </h1>
-      <div class="row activities">
-        <form name="formInput" ng-submit="addItem(todoInput)">
-          <input ng-model="todoInput" type="text">
-          <button class="btn btn-sm btn-primary" id="addActivity">+</button>
-        </form>
+    <div class="row">
+      <div class='col-xs-6'>
+        <h2> To Do </h2>
+        <ul class="lists" id="todo-list">
+        <!-- Your Directive Here -->
+        </ul>
       </div>
 
-      <div class="row">
-        <div class='col-xs-6'>
-          <h2> To Do </h2>
-          <ul class="lists" id="todo-list">
-            <list-item ng-repeat="item in items | filter: {complete:false}" item="item" remove="remove"></list-item>
-          <!-- Your Todo List Here -->
-          </ul>
-        </div>
-
-        <div class='col-xs-6'>
-          <h2> Complete </h2>
-          <ul class="lists" id="complete-list">
-            <list-item ng-repeat="item in items | filter: {complete:true}" item="item"></list-item>
-          </ul>
-        </div>
+      <div class='col-xs-6'>
+        <h2> Complete </h2>
+        <ul class="lists" id="complete-list">
+        <!-- Your Directive Here -->
+        </ul>
       </div>
     </div>
   </body>
