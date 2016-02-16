@@ -27,7 +27,7 @@
           <h2> To Do </h2>
           <div class="lists">
             <ul id="todo-list">
-              <list-item ng-repeat="item in items" item="item"></list-item>
+              <list-item ng-repeat="item in items | filter: {complete:false}" item="item"></list-item>
             <!-- Your Todo List Here -->
             </ul>
           </div>
@@ -39,7 +39,7 @@
 
           <div class="lists">
             <ul id="complete-list">
-              <!-- Your Completed Tasks Here -->
+              <list-item ng-repeat="item in items | filter: {complete:true}" item="item"></list-item>
             </ul>
           </div>
 

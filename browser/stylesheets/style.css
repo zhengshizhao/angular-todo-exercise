@@ -38,13 +38,21 @@ h2 {
   font-size: 18px;
 }
 
+.btn {
 
-.btn-circle {
-  height: 20px;
-  width: 20px;
-  border-radius: 50%;
   text-align: center;
   padding: 6px 0;
-  font-size: 12px;
-  line-height: 42%; }
+  height: 20px;
+  width: 20px;
+  line-height: 42%; 
+  
+}
+
+
+.btn-danger {
+  height: 12px;
+  width: 12px;
+  border-radius: 50%;
+  font-size: 6px;
+}
 

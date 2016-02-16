@@ -5,7 +5,6 @@
   "main": "app.js",
   "scripts": {
     "build-css": "node-sass -w -r assets/stylesheets -o public/stylesheets",
-    "mongo": "mongod & nodemon -e html,css,js app.js",
     "start": "nodemon -e html,css,js app.js"
   },
   "author": "gabriel@fullstackacademy.com",
