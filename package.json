@@ -1,5 +1,5 @@
 {
-  "name": "tripplanner",
+  "name": "angular-todo",
   "version": "1.0.0",
   "description": "",
   "main": "app.js",
@@ -7,7 +7,7 @@
     "build-css": "node-sass -w -r assets/stylesheets -o public/stylesheets",
     "start": "nodemon -e html,css,js app.js"
   },
-  "author": "gabriel@fullstackacademy.com",
+  "author": "",
   "license": "MIT",
   "dependencies": {
     "angular": "^1.5.0",

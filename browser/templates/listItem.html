@@ -1,8 +1,6 @@
 <li class="list-item">
-
-  <button ng-show="!item.complete" class="btn btn-sm btn-default forward">✅</button>
-  <button ng-show="item.complete" class="btn btn-sm btn-default backward">⇦</button>
+  <button ng-click="markComplete()" ng-show="!item.complete" class="btn btn-sm btn-default forward">✅</button>
+  <button ng-click="markIncomplete()" ng-show="item.complete" class="btn btn-sm btn-default backward">⇦</button>
   <span>{{item.content}}</span>
-  <button class="btn btn-sm btn-danger x">X</button>
-
+  <button ng-click="removeItem(item)" class="btn btn-sm btn-danger x">X</button>
 </li>
