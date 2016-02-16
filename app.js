@@ -1,7 +1,6 @@
 var express = require('express');
 var morgan = require('morgan');
 var bodyParser = require('body-parser');
-var swig = require('swig');
 
 var app = express();
 
@@ -35,9 +34,7 @@ app.use(function(req, res, next) {
 app.use(function(err, req, res, next) {
   res.status(err.status || 500);
   console.log({ error: err });
-  res.render('error', {
-  	error: err
-  });
+  res.send();
 });
 
 // listen on a port
