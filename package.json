@@ -1,6 +1,6 @@
 {
   "name": "angular-todo",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "An exercise with Angular",
   "main": "app.js",
   "scripts": {
