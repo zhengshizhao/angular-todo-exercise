@@ -1,21 +1,11 @@
 var express = require('express');
 var router = express.Router();
 var models = require('../models');
-var Activity = models.Activity;
 var ListItem = models.ListItem;
 var Promise = require('bluebird');
 
-
-router.get('/activities', function (req, res, next) {
-  Activity.find({}).exec()
-  .then(function (allActivities) {
-    res.json(allActivities);
-  })
-  .then(null, next);
-});
-
 router.get('/listItems', function (req, res, next) {
-  ListItem.find({}).populate('activity')
+  ListItem.find({})
   .then(function (allListItems) {
     res.json(allListItems);
   }).then(null, next);
@@ -31,7 +21,7 @@ router.post('/listItems', function (req, res, next) {
 router.put('/listItems/:itemId', function (req, res, next) {
   ListItem.findById(req.params.itemId)
   .then(function (foundItem) {
-    foundItem.status = req.body.status;
+    foundItem.complete = req.body.complete;
     return foundItem.save()
   }).then(function (savedItem) {
     res.json(savedItem);

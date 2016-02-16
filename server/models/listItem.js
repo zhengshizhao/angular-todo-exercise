@@ -1,15 +1,13 @@
 var mongoose = require('mongoose');
 
 var schema = new mongoose.Schema({
-	activity: {
-		type: mongoose.Schema.Types.ObjectId,
-		ref: 'Activity',
+	content: {
+		type: String,
 		required: true
 	},
-	status: {
-		type: String,
-		enum: ['todo', 'complete'],
-		default: 'todo'
+	complete: {
+		type: Boolean,
+		default: false
 	}
 });
 
