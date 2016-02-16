@@ -8,44 +8,50 @@
 
   </head>
   <body ng-app="app">
-    <h1 href="/">
-      <span class="glyphicon glyphicon-pencil"></span>
-      <span>   My Cool To-Do List</span>
-    </h1>
-
-    <div class="row activities">
-      <select name="select" id="activity-selector">
-      </select>
-      <button class="btn btn-primary" id="addActivity">+</button>
-    </div>
-
-    <div class="row">
-      <div class='col-lg-6'>
-        <h2> To Do </h2>
-        <list-item>
-        </list-item>
-        <div class="lists">
-          <ul id="todo-list">
-          <!-- Your Todo List Here -->
-          </ul>
-        </div>
-
+    <div ng-controller="MainCtrl">
+       
+      <h1 href="/">
+        <span class="glyphicon glyphicon-pencil"></span>
+        <span>   My Cool To-Do List</span>
+      </h1>
+      <main-header></main-header>
+      <div class="row activities">
+        <select name="select" id="activity-selector">
+        </select>
+        <button class="btn btn-primary" id="addActivity">+</button>
       </div>
-
-      <div class='col-lg-6'>
-        <h2> Complete </h2>
-
-        <div class="lists">
-          <ul id="complete-list">
-            <!-- Your Completed Tasks Here -->
-          </ul>
+  
+      <div class="row">
+        <div class='col-lg-6'>
+          <h2> To Do </h2>
+          <list-item>
+          </list-item>
+          <div class="lists">
+            <ul id="todo-list">
+            <!-- Your Todo List Here -->
+            </ul>
+          </div>
+  
         </div>
-
+  
+        <div class='col-lg-6'>
+          <h2> Complete </h2>
+  
+          <div class="lists">
+            <ul id="complete-list">
+              <!-- Your Completed Tasks Here -->
+            </ul>
+          </div>
+  
+        </div>
+  
+  
+  
       </div>
-
-
-
+        
+        
     </div>
+   
 
 
 

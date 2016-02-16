@@ -3,17 +3,25 @@
 // For educational purposes, we have put the entire angular app in one file.  Don't try this at home.  It is not safe.
 var app = angular.module('app', []);
 
-app.directive('header', function() {
+app.directive('mainHeader', function() {
   return {
-  	restrict: 'E',
-    templateUrl: '/temlpates/header.html'
+  	restrict: 'A',
+    templateUrl: '/templates/header.html'
   }
 })
 
-app.directive('list-item', function() {
+app.directive('listItem', function() {
   return {
-    templateUrl: '/temlpates/listItem.html'
+    templateUrl: '/templates/listItem.html',
+    controller: 'MainCtrl',
+    scope: {
+      content:'=content'
+    }
   }
+})
+
+app.controller('MainCtrl', function($scope) {
+	
 })
 
 
