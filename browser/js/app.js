@@ -7,19 +7,34 @@ app.controller('MainCtrl', function($scope) {
   $scope.items = [];
 
   //Creates an item object and adds it to the items array
-  $scope.addItem = function() {
+  $scope.addItem = function(newItem) {
     var listItem = {
-      //item data here
+      task: newItem,
+      complete: false
     }
-
-    $scope.items.push(listItem)
+    $scope.items.push(listItem);
+    $scope.toDoInput="";
   }
-
+  $scope.remove = function(itemToRemove){
+    utilsModule.remove($scope.items, itemToRemove)
+  }
+  
 })
 
-app.directive('listItem', function() {
+app.directive('listItem', function(){
   return {
+    restrict: 'E',
+    templateUrl: '/templates/listItem.html',
+    scope: {
+      item: '=',
+      remove: '='
+    }, 
 
+    link: function(scope){
+      scope.mark = function(){
+        scope.item.complete = !scope.item.complete;
+      }
+    }
   }
 })
 
